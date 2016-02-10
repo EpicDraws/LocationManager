@@ -83,6 +83,10 @@ static id _sharedInstance;
     }
     else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) {
         return INTULocationServicesStateRestricted;
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        return INTULocationServicesStateAvailableWhenInUse;
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+        return INTULocationServicesStateAvailableAlways;
     }
     
     return INTULocationServicesStateAvailable;

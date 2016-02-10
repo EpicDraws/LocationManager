@@ -75,7 +75,9 @@ typedef NS_ENUM(NSInteger, INTULocationServicesState) {
     /** User does not have ability to enable location services (e.g. parental controls, corporate policy, etc). */
     INTULocationServicesStateRestricted,
     /** User has turned off location services device-wide (for all apps) from the system Settings app. */
-    INTULocationServicesStateDisabled
+    INTULocationServicesStateDisabled,
+    INTULocationServicesStateAvailableWhenInUse,
+    INTULocationServicesStateAvailableAlways
 };
 
 /** A unique ID that corresponds to one location request. */
