@@ -403,7 +403,7 @@ static id _sharedInstance;
     // INTULocationManager determines which level of permissions to request based on which description key is present in your app's Info.plist
     // If you provide values for both description keys, the more permissive "Always" level is requested.
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1 && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        BOOL hasAlwaysKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] != nil;
+        BOOL hasAlwaysKey = NO;
         BOOL hasWhenInUseKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"] != nil;
         if (hasAlwaysKey) {
             [self.locationManager requestAlwaysAuthorization];
